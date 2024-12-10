@@ -2,8 +2,9 @@
 
 Este repositório contém exercício do meu curso em Python.
 Estou iniciando no assunto, conhecendo a linguagem.
-Prof. Gustavo Ale
-CyberEdux - Cuiabá
+
+### Professor: Prof. Gustavo Ale
+### CyberEdux - Cuiabá
 
 
 ### Andamento do curso 
