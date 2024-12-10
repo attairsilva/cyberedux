@@ -5,7 +5,7 @@ Estou iniciando no assunto, conhecendo a linguagem.
 
 ### Instituição: CyberEdux
 ### Professor: Prof. Gustavo Ale
-### CyberEdux - Cuiabá
+
 
 
 ### Andamento do curso 
