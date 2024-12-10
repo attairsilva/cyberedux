@@ -3,6 +3,7 @@
 Este repositório contém exercício do meu curso em Python.
 Estou iniciando no assunto, conhecendo a linguagem.
 
+### Instituição: CyberEdux
 ### Professor: Prof. Gustavo Ale
 ### CyberEdux - Cuiabá
 
@@ -11,3 +12,4 @@ Estou iniciando no assunto, conhecendo a linguagem.
 
 - Conhecendo listas
 - Iterando listas
+- Dicionários
