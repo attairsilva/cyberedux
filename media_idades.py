@@ -14,6 +14,7 @@ def validar_idade(lista_idades):
             idades_validas.append(idade)
         else:
             idades_invalidas+=1
+            
     
     # metodos alternativos 
     # idades_validas = [filter(lambda idade: idade >= 0 and <= 120, lista_idades)]

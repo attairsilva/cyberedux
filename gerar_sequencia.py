@@ -10,6 +10,8 @@
 # - Subtrair 5
 # Exemplo de entrada: inicio=1, fim=5, regra="dobrar"
 
+
+
 def gerar_sequencia_personalizada(inicio, fim, regra):
     if regra == 'dobrar':
         return [x * 2 for x in range(inicio, fim+1)]
