@@ -21,6 +21,7 @@ def gerar_sequencia_personalizada(inicio, fim, regra):
         return [x - 5 for x in range(inicio, fim+1)]
     else:
         print('Regra invalida')
+        return[]
 
 print(gerar_sequencia_personalizada(0,10,'dobrar'))
 print(gerar_sequencia_personalizada(0,10,'elevar'))
