@@ -1,7 +1,7 @@
 ## Iniciando Curso em Python
 
 Este repositório contém exercício do meu curso em Python.
-Estou iniciando no assunto, conhecendo a linguagem.
+Depois muito tempo dedicando ao PhP, estou iniciando conhecendo a linguagem.
 
 ### Instituição: CyberEdux
 ### Professor: Prof. Gustavo Ale
