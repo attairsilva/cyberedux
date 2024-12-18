@@ -6,9 +6,13 @@ No hackaton proposto pelo professor, as equipes deverão desenvolver ferramentas
 
 ### Descrição do projeto
 Bibliotecas: Streamlit, panda, datetime
+
 :round_pushpin: Documentação: https://docs.streamlit.io/
+
 :round_pushpin: Recursos de Navegação Multipage: https://docs.streamlit.io/develop/tutorials/multipage/dynamic-navigation
+
 :round_pushpin: Icones - Documentação https://docs.streamlit.io/develop/api-reference/text/st.markdown
+
 :round_pushpin: icones em https://gist.github.com/rxaviers/7360908
 
 #### :fast_forward: Problema que propõe a resolver
