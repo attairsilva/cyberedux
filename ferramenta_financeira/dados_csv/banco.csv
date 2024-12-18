@@ -1,7 +1,0 @@
-command,rating,is_widget
-st.selectbox,4,True
-st.balloons,5,False
-st.time_input,3,True
-st.time_input,3,True
-st.time_input,3,True
-st.time_input,3,True
