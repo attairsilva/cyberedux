@@ -23,7 +23,9 @@ Registro da despesa, e da receita dentro do período
 
 #### :fast_forward: Entradas e Saídas
 Entrada de renda: Descrição, Nome da Font, Valor e Data
+
 Entrada de despesa: Descrição, Categoria, Tipo de despesa, Valor e data
+
 Saída: Gráfico de despesas, renda total, e sobras para o período informado
 
 #### :fast_forward: Inteface
