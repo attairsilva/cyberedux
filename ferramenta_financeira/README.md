@@ -5,6 +5,11 @@
 No hackaton proposto pelo professor, as equipes deverão desenvolver ferramentas de organização financeira, para pessoas físicas ou empresas. Essas ferramentas devem auxiliar os usuários em tarefas como previsão de gastos e rendimentos, controle de gastos, investimentos, impostos, etc.  
 
 ### Descrição do projeto
+Bibliotecas: Streamlit, panda, datetime
+:round_pushpin: Documentação: https://docs.streamlit.io/
+:round_pushpin: Recursos de Navegação Multipage: https://docs.streamlit.io/develop/tutorials/multipage/dynamic-navigation
+:round_pushpin: Icones - Documentação https://docs.streamlit.io/develop/api-reference/text/st.markdown
+:round_pushpin: icones em https://gist.github.com/rxaviers/7360908
 
 #### :fast_forward: Problema que propõe a resolver
 Controle de entrada de receita e saída de despesas
@@ -17,7 +22,7 @@ Entrada de renda: Descrição, Nome da Font, Valor e Data
 Entrada de despesa: Descrição, Categoria, Tipo de despesa, Valor e data
 Saída: Gráfico de despesas, renda total, e sobras para o período informado
 
-#### :fast_forward: Inteface")
+#### :fast_forward: Inteface
 Interface GUI, com páginas de apresentação, grafico, receita e respesa
 
 #### :fast_forward: Auxilio na Tomada de Decisão
