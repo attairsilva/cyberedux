@@ -66,16 +66,13 @@ principal = st.Page(
 receitas = st.Page(
     "paginas/receitas.py", title="Receitas", icon=":material/bug_report:"
 )
-despesas_listar = st.Page(
-    "paginas/despesas_listar.py", title="Listar Despesas", icon=":material/bug_report:"
+despesas  = st.Page(
+    "paginas/despesas.py", title="Despesas", icon=":material/bug_report:"
 )
-despesas_cadastrar = st.Page(
-    "paginas/despesas_cadastrar.py", title="Cadastrar Despesas", icon=":material/bug_report:"
-)
-
+ 
 # agrupamento de paginas convenientes em lista
 sistema_pages = [logout_page]
-menu_pages = [principal, receitas, despesas_listar, despesas_cadastrar]
+menu_pages = [principal, receitas, despesas]
 
 
 
