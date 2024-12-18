@@ -1,24 +1,3 @@
-# Neste hackaton, as equipes deverão desenvolver ferramentas de organização financeira, 
-# para pessoas físicas ou empresas. Essas ferramentas devem auxiliar os usuários em tarefas 
-# como previsão de gastos e rendimentos, controle de gastos, investimentos, impostos, etc. 
-# Pontos importantes nos quais você deve pensar:
-# - Qual problema o seu projeto se propõe a resolver? Como pretende resolver? 
-# R: Controle de gastos com contas a pagar e a receber de uma pessoa física, para que a pessoa
-# não gasta mais do que receba
-# Identifique um problema, proponha uma solução e defina um escopo de trabalho.
-# R: Pessoas costumam gastar mais do que tem a receber, primeiro ele precisa inserir a sua previsão
-# de receita, no mes, para que seja acompanhado percentual que esta sendo gasto e alertar sobre
-# a receita comprometida
-# - Quais são as entradas e saídas do seu programa?
-# R: Cadastro da pessoa, da sua estimativa de renda, de suas despesas fixas e flexissiveis
-# - Como é a interface do seu programa? (CLI e GUI são aceitas)
-# R: Interface gráfica GUI utilizando o STREAMLIT, com um menu de cadastro de pessoa, renda e despesas
-# - Em quais tomadas de decisão o usuário será ajudado pelo seu programa?
-# R: Planejamento mensal financeiro, para saber o valor que ainda resta para um investimento, e
-# um alerta para que sua renda nao seja comprometida com gastos além da sua fonte.
-# - Como seu projeto poderá ser aprimorado após o hackaton?
-# R: Novas funcionalidade envolvendo a previsão de gastos de uma pessoa física, como opções
-# que garantam o alcance de objetivos e cenários financeiros pessoais. 
 
 import streamlit as st
 # Documentação https://docs.streamlit.io/
@@ -40,15 +19,16 @@ tipos_sessao = [None, "Padrao"]
 def login():
       st.header("Entrar")
       sessao = st.selectbox("Escolha seu usuário", tipos_sessao)
-      # Caixa de seleção para o usuário escolher uma função
+      # Caixa de seleção para o usuário escolher uma sessao
       
       if st.button("Acessar"):
         st.session_state.sessao  = sessao 
         st.rerun()
-        # Caixa de seleção para o usuário escolher uma função
-      
+        # salva sessao selecionada
+
 def logout():   
     st.session_state.sessao  = None # sessao para NONE si do sistema
+    # salva a sessao como None para sair
     st.rerun()
 
 sessao = st.session_state.sessao
