@@ -5,7 +5,7 @@
 No hackaton proposto pelo professor, as equipes deverão desenvolver ferramentas de organização financeira, para pessoas físicas ou empresas. Essas ferramentas devem auxiliar os usuários em tarefas como previsão de gastos e rendimentos, controle de gastos, investimentos, impostos, etc.  
 
 ### Descrição do projeto
-Bibliotecas: Streamlit, panda, datetime
+Bibliotecas: 'Streamlit', 'panda', 'datetime'
 
 :round_pushpin: Documentação: https://docs.streamlit.io/
 
