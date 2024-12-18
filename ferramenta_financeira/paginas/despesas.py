@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime
 
 
-st.header("DESPESAS")
+st.header(":money_with_wings: DESPESAS")
 
 def cadastrar_despesa(dicionario):
     cont=0
@@ -27,8 +27,8 @@ def cadastrar_despesa(dicionario):
     
     
     col1, col2  = st.columns(2)
-    processa=col1.button('SALVAR',use_container_width=True)
-    apagar=col2.button('APAGAR',use_container_width=True)
+    processa=col1.button(':heavy_check_mark: SALVAR',use_container_width=True)
+    apagar=col2.button(':x: APAGAR DESPESAS',use_container_width=True)
     
     if processa:
       despesa = {}
@@ -55,7 +55,7 @@ for i in enumerate(st.session_state.dicionario_despesa):
 
 cadastrar_despesa(st.session_state.dicionario_despesa)
 
-st.write(f'## GASTOS POR CATEGORIA')
+st.write(f'## :money_with_wings: GASTOS POR CATEGORIA')
 st.write(f'### POR PERÍODO')
 
 entrada = st.session_state.dicionario_despesa.values()

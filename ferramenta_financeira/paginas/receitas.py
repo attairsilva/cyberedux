@@ -4,7 +4,7 @@ from datetime import datetime
 # necessidade do vega_datasetse panda para recursos graficos, documentação do streamlit
 # https://docs.streamlit.io/develop/api-reference/charts/st.bar_chart
 
-st.header("RECEITAS")
+st.header(":dollar: RECEITAS")
 
 def cadastrar_receita(dicionario):
     cont=0
@@ -19,8 +19,9 @@ def cadastrar_receita(dicionario):
     
     
     col1, col2  = st.columns(2)
-    processa=col1.button('SALVAR',use_container_width=True)
-    apagar=col2.button('APAGAR',use_container_width=True)
+
+    processa=col1.button(':heavy_check_mark: SALVAR',use_container_width=True)
+    apagar=col2.button(':x: APAGAR DESPESAS',use_container_width=True)
     
     if processa:
       receita = {}
@@ -45,7 +46,7 @@ for i in enumerate(st.session_state.dicionario_receita):
 
 cadastrar_receita(st.session_state.dicionario_receita)
 
-st.write(f'## RECEITAS')
+st.write(f'## :dollar: RECEITAS REGISTRADAS')
 
 # dataInicio = st.date_input("Data de Inicio", format="DD/MM/YYYY")
 # dataFim = st.date_input("Data Final", format="DD/MM/YYYY")
