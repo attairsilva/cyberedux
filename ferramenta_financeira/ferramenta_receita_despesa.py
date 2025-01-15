@@ -6,7 +6,7 @@ import streamlit as st
 # Realizei as adaptações para que não fosse necessários mais de um tipo de sessão de navegação
 # Icones - Documentação https://docs.streamlit.io/develop/api-reference/text/st.markdown
 # Busquei icones em https://gist.github.com/rxaviers/7360908
-#
+
 if "sessao" not in st.session_state:
     st.session_state.sessao = None
     # Valor para controlar o acesso ao sistema. 
