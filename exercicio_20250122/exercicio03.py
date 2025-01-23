@@ -1,17 +1,7 @@
-lista=[]
 
-with open("lista_mails.txt",'r') as arquivo:
+
+with open("relatorio_usuario.txt",'r') as arquivo:
     for linha in arquivo:
-      print(f'Gravando dado [{linha.strip()}] na LISTA')
-      lista.append(linha.strip())
-
-print('Exibindo LISTA')
-
-for e in lista:
-      print(f'E-mail: {e}')
-      
-
-
-
-    
-     
+          txt=linha.split('=')
+          mb=int(txt[1].strip())/1048576
+          print(f'Usuário: {txt[0]} ............. Uso do Disco ({round(mb)} MiB)')
