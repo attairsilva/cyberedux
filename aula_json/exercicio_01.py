@@ -1,13 +1,13 @@
 import json  
 # Importa o módulo JSON para manipular arquivos no formato JSON
 
-def main():
-    cadastros = []  
-    # Lista para armazenar os cadastros realizados
 
-    def menu():
+cadastros = []  
+# Lista para armazenar os cadastros realizados
+
+def menu():
         # Exibe o menu de opções para o usuário
-        print("\nMenu de Opções:")
+        print("\n Menu de Opções:")
         print("1. Cadastrar pessoa")  # Opção para cadastrar uma nova pessoa
         print("2. Listar cadastros")  # Opção para exibir os cadastros realizados
         print("3. Salvar cadastros")  # Opção para salvar os cadastros em um arquivo JSON
@@ -15,14 +15,14 @@ def main():
         print("5. Sair")  # Opção para sair do programa
         return input("Escolha uma opção: ")  # Retorna a escolha do usuário
 
-    def cadastrar_pessoa():
+def cadastrar_pessoa():
         # Função para cadastrar uma nova pessoa
         nome = input("Digite o nome da pessoa: ")  # Solicita o nome da pessoa
         cpf = input("Digite o CPF da pessoa: ")  # Solicita o CPF da pessoa
         cadastros.append({"nome": nome, "cpf": cpf})  # Adiciona o cadastro à lista
         print("Cadastro realizado com sucesso!")  # Confirmação de cadastro
 
-    def listar_cadastros():
+def listar_cadastros():
         # Função para listar todos os cadastros realizados
         if not cadastros:  # Verifica se a lista de cadastros está vazia
             print("Nenhum cadastro encontrado.") 
@@ -33,7 +33,7 @@ def main():
                 # Enumera os cadastros para exibição
                 print(f"{idx}. Nome: {pessoa['nome']}, CPF: {pessoa['cpf']}")  # Exibe cada cadastro
 
-    def salvar_cadastros():
+def salvar_cadastros():
         # Função para salvar os cadastros em um arquivo JSON
         try:
             with open("cadastros.json", "w") as arquivo:  
@@ -46,9 +46,8 @@ def main():
             print(f"Erro ao salvar cadastros: {e}")  
             # Exibe mensagem de erro caso algo dê errado
 
-    def carregar_cadastros():
+def carregar_cadastros():
         # Função para carregar cadastros de um arquivo JSON
-        nonlocal cadastros  
         # Permite modificar a variável 'cadastros' definida fora da função
         try:
             with open("cadastros.json", "r") as arquivo: 
@@ -64,7 +63,7 @@ def main():
             print("Erro ao carregar cadastros: Arquivo corrompido ou vazio.")  
             # Mensagem se houver erro no arquivo
 
-    while True:
+while True:
         # Loop principal do programa
         opcao = menu()  
         # Exibe o menu e recebe a opção escolhida pelo usuário
@@ -84,5 +83,4 @@ def main():
             print("Opção inválida. Tente novamente.") 
             # Mensagem para opções inválidas
 
-if __name__ == "__main__":
-    main()  # Executa a função principal ao iniciar o programa
+
