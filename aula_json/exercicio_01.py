@@ -47,14 +47,12 @@ pessoas={}
    
 while True:
         # Loop principal do programa
-        pessoas=carregar_pessoas()
         print("\nMenu de Opções:")
         print("1. Incluir pessoa")  
         print("2. Listar cadastros de pessoas")  
-        print("3. Editar Pessoa")  
-        print("4. Deletar Pessoa") 
-        print("5. Buscar pessoa no dicionario") 
-        print('6. Sair')
+        print("3. Salvar pessoas do dicionario no JASON")  
+        print("4. Carregar pessoad do JSONa") 
+        print('5. Sair')
         print('==================================')
         opcao = int(input('Informe o numero da opção: '))
         if opcao == 1:
@@ -64,7 +62,7 @@ while True:
         elif opcao == 3:
             salvar_pessoas(pessoas)  # Chama a função para salvar os cadastros
         elif opcao == 4:
-            carregar_pessoas()  # Chama a função para carregar os cadastros
+            pessoas=carregar_pessoas()  # Chama a função para carregar os cadastros
         elif opcao == 5:
             print("Saindo do programa. Até mais!")  # Mensagem de saída
             break  # Encerra o loop e finaliza o programa
