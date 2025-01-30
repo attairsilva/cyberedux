@@ -27,48 +27,62 @@ def listar_pessoas(dicionario):
 
 def salvar_pessoas(dicionario):
     # Função para salvar os cadastros em um arquivo JSON
-    try:
-        with open("cadastros.json", "w") as arquivo:  
+    with open("cadastros.json", "w") as arquivo:  
             # Abre o arquivo para escrita
             json.dump(pessoas, arquivo, indent=4)  
              # Salva a lista de cadastros no arquivo
             print("Cadastros salvos com sucesso no json!")  
             # Confirmação de salvamento
-    except Exception as e:
-        print(f"Erro ao salvar cadastros no arquivo json: {e}")  
-        # Exibe mensagem de erro caso algo dê errado
 
 def carregar_pessoas():
-    #funcao carrega pessoas do arquivo json para lista
-    with open("cadastros.json", "r") as arquivo: 
-        # Abre o arquivo para leitura
-        pessoas = json.load(arquivo) 
-        return pessoas 
-        #return pessoas
+    with open("cadastros.json", "r") as arquivo:
+            pessoas = json.load(arquivo)
+            print("Carregados o arquivo JSON com sucesso!")
+            return pessoas  # Retorna os dados carregados
 
+def editar_pessoas(dicionario):
+    # Edita o nome de uma pessoa já cadastrada
+    cpf = input("Informe o CPF da pessoa que deseja editar: ")
+    if cpf in dicionario:
+        novo_nome = input("Informe o novo nome: ")
+        dicionario[cpf] = novo_nome
+        print("Cadastro atualizado com sucesso!")
+    else:
+        print("CPF não encontrado!")
 
-pessoas={}
+def deletar_pessoas(dicionario):
+    # Remove uma pessoa do dicionário
+    cpf = input("Informe o CPF da pessoa que deseja excluir: ")
+    if cpf in dicionario:
+        dicionario.pop(cpf)
+        print("Cadastro removido com sucesso!")
+    else:
+        print("CPF não encontrado!")
 
 while True:
+    pessoas=carregar_pessoas()
     print("\nMenu de Opções:")
-    print("1. Incluir pessoa no dicionario")  
-    print("2. Listar cadastros do dicionario")  
-    print("3. Buscar pessoa no dicionario") 
-    print("4. Salvar cadastros do dicionario no json") 
-    print("5. Carregar cadastros do json") 
+    print("1. Incluir pessoa")  
+    print("2. Listar cadastros de pessoas")  
+    print("3. Editar Pessoa")  
+    print("4. Deletar Pessoa") 
+    print("5. Buscar pessoa no dicionario") 
     print('6. Sair')
     print('==================================')
     operacao = int(input('Informe o numero da opção: '))
     if operacao == 1:
         cadastrar_pessoa(pessoas)
+        salvar_pessoas(pessoas)
     elif operacao == 2:
         listar_pessoas(pessoas)
     elif operacao == 3:
-        buscar_pessoas(pessoas)
+        editar_pessoas(pessoas)
+        salvar_pessoas(pessoas)
     elif operacao == 4:
+        deletar_pessoas(pessoas)
         salvar_pessoas(pessoas)
     elif operacao == 5:
-        pessoas=carregar_pessoas() 
+        buscar_pessoas(pessoas)
     elif operacao == 6:
         break 
     else:
