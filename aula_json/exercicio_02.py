@@ -43,7 +43,8 @@ def carregar_pessoas():
 def editar_pessoas(dicionario):
     # Edita o nome de uma pessoa já cadastrada
     cpf = input("Informe o CPF da pessoa que deseja editar: ")
-    if cpf in dicionario:
+    print(f'= Nome Anterior => {dicionario.get(cpf)}')
+    if cpf in dicionario.keys():
         novo_nome = input("Informe o novo nome: ")
         dicionario[cpf] = novo_nome
         print("Cadastro atualizado com sucesso!")
@@ -58,7 +59,7 @@ def deletar_pessoas(dicionario):
         print("Cadastro removido com sucesso!")
     else:
         print("CPF não encontrado!")
-
+pessoas={}
 while True:
     pessoas=carregar_pessoas()
     print("\nMenu de Opções:")
