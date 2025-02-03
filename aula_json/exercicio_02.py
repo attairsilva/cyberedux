@@ -7,7 +7,7 @@ def cadastrar_pessoa(dicionario):
     nome=input('Informe seu nome: ') 
     pessoa = []
     pessoa=nome
-    dicionario[cpf]=pessoa
+    dicionario[cpf]={ "nome": pessoa}
 
 def buscar_pessoas(dicionario):
     #busca pessoa no dicionario
@@ -16,14 +16,14 @@ def buscar_pessoas(dicionario):
     for chave, valor in pessoas.items():
         if int(chave) == consulta:
             cont+=1
-            print(f'==> CPF: {chave} - Nome: {valor} ')
+            print(f'{chave} - Nome: {valor['nome']} ')
         if cont == 0:
             print('Não encontrado!')
 
 def listar_pessoas(dicionario):
     # lista pessoas do dicionario
-    for chave,valor in pessoas.items():
-                print(f'==> CPF {chave} - Nome: {valor} ')
+    for cpf,pessoa in pessoas.items():
+                print(f'{cpf} - Nome: {pessoa['nome']} ')
 
 def salvar_pessoas(dicionario):
     # Função para salvar os cadastros em um arquivo JSON
@@ -35,18 +35,21 @@ def salvar_pessoas(dicionario):
             # Confirmação de salvamento
 
 def carregar_pessoas():
-    with open("cadastros.json", "r") as arquivo:
-            pessoas = json.load(arquivo)
-            print("Carregados o arquivo JSON com sucesso!")
-            return pessoas  # Retorna os dados carregados
+    try:
+        with open("cadastros.json", "r") as arquivo:
+                pessoas = json.load(arquivo)
+                print("Carregados o arquivo JSON com sucesso!")
+                return pessoas  # Retorna os dados carregados
+    except:
+        pessoas=[]
 
 def editar_pessoas(dicionario):
     # Edita o nome de uma pessoa já cadastrada
     cpf = input("Informe o CPF da pessoa que deseja editar: ")
     print(f'= Nome Anterior => {dicionario.get(cpf)}')
-    if cpf in dicionario.keys():
+    if cpf in dicionario:
         novo_nome = input("Informe o novo nome: ")
-        dicionario[cpf] = novo_nome
+        dicionario[cpf]['nome'] = novo_nome
         print("Cadastro atualizado com sucesso!")
     else:
         print("CPF não encontrado!")
@@ -59,9 +62,11 @@ def deletar_pessoas(dicionario):
         print("Cadastro removido com sucesso!")
     else:
         print("CPF não encontrado!")
-pessoas={}
+
+pessoas=carregar_pessoas()
+
 while True:
-    pessoas=carregar_pessoas()
+    
     print("\nMenu de Opções:")
     print("1. Incluir pessoa")  
     print("2. Listar cadastros de pessoas")  
@@ -73,18 +78,17 @@ while True:
     operacao = int(input('Informe o numero da opção: '))
     if operacao == 1:
         cadastrar_pessoa(pessoas)
-        salvar_pessoas(pessoas)
     elif operacao == 2:
         listar_pessoas(pessoas)
     elif operacao == 3:
         editar_pessoas(pessoas)
-        salvar_pessoas(pessoas)
     elif operacao == 4:
         deletar_pessoas(pessoas)
-        salvar_pessoas(pessoas)
     elif operacao == 5:
         buscar_pessoas(pessoas)
     elif operacao == 6:
+        salvar_pessoas(pessoas)
         break 
+    
     else:
         print('Opção inválida!')
