@@ -52,16 +52,15 @@ def efetuar_venda():
     
     print("==== INFOME O CODIGO DO PRODUTO A SER VENDIDO ")
    
-    vendasatual = []
-    
+    venda = []
+        
     while True:
         
         codigocheck = input("Informe o códgio do produto: ")
-        
-        
+
         if codigocheck == "":
-            mostrar_recibo(vendasatual) 
-            salvar_vendas(vendas)               
+            mostrar_recibo(venda)  
+            vendas.append(venda)           
             break
         elif codigocheck in produtos:
             qtd = float(input("Informe a quantidade: "))
@@ -74,9 +73,10 @@ def efetuar_venda():
             valorp_lista = produtos[codigocheck]["preco"]
             preco_total =  valorp_lista * qtd
             
-            vendas.append((qtd, nomep_lista, preco_total))
-            vendasatual.append((qtd, nomep_lista, preco_total))
+            
+            venda.append((qtd, nomep_lista, preco_total))
             # Adiciona a nova venda à lista existente
+
             
         else:
             print("Produto não cadastrado")
@@ -127,6 +127,7 @@ def salvar_vendas(dicionario):
 # Menu
 #-------------------------------------------------------------------------------
 def menu():
+    
     while True:
         print('1 - Efetuar Venda')
         print('2 - Balancete')
@@ -142,6 +143,7 @@ def menu():
             balancete()
         elif opc == '0':
             # Sair
+            salvar_vendas(vendas)  
             break
         else:
             # Opção inválida
