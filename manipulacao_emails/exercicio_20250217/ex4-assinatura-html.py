@@ -9,7 +9,7 @@ senha = '@Aula321'
 
 rem = usuario
 
-des = 'angy15@e-record.com'
+des = 'attaircba@gmail.com'
 corpo_email = '''
 Teste email html v4!!!
 '''

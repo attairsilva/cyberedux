@@ -1,0 +1,45 @@
+# Ignore arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignore dependências
+node_modules/
+venv/
+.env
+
+# Ignore arquivos compilados
+*.pyc
+*.pyo
+*.exe
+*.dll
+*.so
+*.o
+*.a
+*.out
+*.class
+*.jar
+
+# Ignore logs e caches
+npm-debug.log
+yarn-error.log
+pip-log.txt
+__pycache__/
+
+# Ignore configurações de IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Ignore arquivos do Flutter
+pubspec.lock
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Ignore chaves e credenciais
+*.pem
+*.key
+*.crt
+
+# Ignorar todos os arquivos JSON, exceto package.json
+*.json
+!package.json

@@ -13,7 +13,7 @@ usuario = os.getenv('USUARIO')
 senha = os.getenv('SENHA')
 
 rem = usuario
-des = 'angy15@e-record.com'
+des = 'attaircba@gmail.com'
 
 msg = MIMEText('Testando email pelo smtplib v5!!!', 'plain')
 msg['Subject'] = 'Aula 17-02-2025 v5-dotenv'
