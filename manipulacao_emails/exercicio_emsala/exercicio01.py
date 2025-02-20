@@ -11,6 +11,13 @@ servidor = config['servidor']
 usuario = config['usuario']
 senha = config['senha']
 
+
+#faz o login
+def login():
+    con = SMTP_SSL(servidor[0], servidor[1])
+    con.login(usuario, senha)
+    return con
+
 #envia mensagem
 def enviaMensagem(assunto,destinatario,corpo_email,con):
     msg = MIMEText(corpo_email, 'html')
@@ -27,13 +34,11 @@ def enviaMensagem(assunto,destinatario,corpo_email,con):
 # funcao carrega dados e envia email
 def enviar_excel_email():
    
-        con = SMTP_SSL(servidor[0], servidor[1])
-        con.login(usuario, senha)
-   
         excel = load_workbook('inscritos.xlsx')
         planilha=excel['Sheet']
-        
+        con=login()
         total_linhas=planilha.max_row
+        
         for linhas in range(2,total_linhas+1):
                 nome = planilha.cell(row=linhas, column=1).value
                 email = planilha.cell(row=linhas, column=2).value
