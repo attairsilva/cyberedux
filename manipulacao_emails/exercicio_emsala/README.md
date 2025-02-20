@@ -1,10 +1,10 @@
 ## Envia e-mail
 
-### Este repositório contém exercício do meu curso em Python
-### Foi utilizado a plataforma https://mail.tm/ para criação de e-mails temporários que estão em um arquivo excel
-### O codigo faz a leitura dos e-mails na planilha excel [nome, email]
+#### Este repositório contém exercício do meu curso em Python
+#### Foi utilizado a plataforma https://mail.tm/ para criação de e-mails temporários que estão em um arquivo excel
+#### O codigo faz a leitura dos e-mails na planilha excel [nome, email]
 
-## O arquivo config.json, contem os dados da conta de email que fara o envio:
+#### O arquivo config.json, contem os dados da conta de email que fara o envio:
 
 ```
 {
