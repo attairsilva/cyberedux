@@ -2,7 +2,7 @@
 
 #### Este repositório faz parte do meu curso em Python.
 #### Utilizando o GROQ para montar chatbots
-#### Documentação https://groq.com
+#### Documentação https://console.groq.com/docs
 
 ```
 pip install groq
