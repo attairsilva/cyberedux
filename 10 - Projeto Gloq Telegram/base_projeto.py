@@ -9,18 +9,12 @@ from openpyxl import load_workbook
 
 
 load_dotenv() 
-print(os.getenv("TOKEN_BOT_TELEGRAM")) 
-#------------------------------------------------------------------------------
+# print(os.getenv("TOKEN_BOT_TELEGRAM")) 
 
 bot = telebot.TeleBot(os.getenv('TOKEN_BOT_TELEGRAM'))
 cliente_groq = Groq(api_key=os.getenv("TOKEN_API_GROQ"))
 
-# bot = telebot.TeleBot("Seu token do telegram")
-# cliente_groq = Groq(api_key='CHAVE DA API DO GROK AQUI!')
 
-#------------------------------------------------------------------------------
-# Groq
-#------------------------------------------------------------------------------
 cardapio = {}
 
 
@@ -44,7 +38,7 @@ def carregar_prompt():
         with open('prompt.txt', 'r') as arquivo_prompt:
             prompt = arquivo_prompt.read()
         return prompt
-    except e:
+    except Exception as e:
         print (f'Erro ao carregar prompt {e}')
 
 carregar_cardapio()
@@ -126,7 +120,8 @@ def assistente(message):
        
     else:
         
-        resposta = f'Comando fora de contexto, {dados['resposta']}'
+        #resposta = f'Comando fora de contexto, {dados['resposta']}'
+        resposta = f'{dados['resposta']}'
 
     bot.send_message(message.chat.id, resposta)
     print(f'Recebido do usuario: {message.text}')
